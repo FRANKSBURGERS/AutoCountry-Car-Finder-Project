@@ -14,15 +14,14 @@ Loop continuously until the user decides to exit:
             2. SEARCH for Authorized Vehicle
             3. ADD Authorized Vehicle
             4. Exit
+  Prompt the user to enter their choice
 
-    Prompt the user to enter their choice
-
-    If the user chooses "1":
+ If the user chooses "1":
         Display the message: "The AutoCountry sales manager has authorized the purchase and selling of the following vehicles:"
         List all vehicles from the list
         Print a separation line for clarity
 
-    If the user chooses "2":
+  If the user chooses "2":
         Prompt the user: "Please Enter the full Vehicle name:"
         Get the vehicle name input from the user
         Check if the entered vehicle name is in the list of allowed vehicles
@@ -32,7 +31,7 @@ Loop continuously until the user decides to exit:
             Alert the user: "[Vehicle Name] is not an authorized vehicle, if you received this in error please check the spelling and try again"
         Print a separation line for clarity
 
-    If the user chooses "3":
+ If the user chooses "3":
         Prompt the user: "Please Enter the full Vehicle name you would like to add:"
         Get the vehicle name input from the user
         Check if the vehicle is already in the list
@@ -44,12 +43,12 @@ Loop continuously until the user decides to exit:
             Alert the user: "[Vehicle Name] is already an authorized vehicle"
         Print a separation line for clarity
 
-    If the user chooses "4":
+ If the user chooses "4":
         Display the goodbye message: "Thank you for using the AutoCountry Vehicle Finder, good-bye!"
         Pause for 2 seconds so the user can read the message
         Terminate the program
 
-    If the user enters an invalid choice:
+ If the user enters an invalid choice:
         Inform the user that the choice is invalid
         Prompt the user to try again
 
