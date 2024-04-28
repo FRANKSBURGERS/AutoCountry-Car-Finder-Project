@@ -8,22 +8,21 @@ Load vehicles from the file:
 
 Loop continuously until the user decides to exit:
     Display the main menu:
-        Show program version (v0.4) and name (AutoCountry Vehicle Finder)
+        Show program version (v0.5) and name (AutoCountry Vehicle Finder)
         Present options:
             1. PRINT all Authorized Vehicles
             2. SEARCH for Authorized Vehicle
             3. ADD Authorized Vehicle
             4. DELETE Authorized Vehicle
             5. Exit
-
-  Prompt the user to enter their choice
+    Prompt the user to enter their choice
 
  If the user chooses "1":
         Display the message: "The AutoCountry sales manager has authorized the purchase and selling of the following vehicles:"
         List all vehicles from the list
         Print a separation line for clarity
 
-   If the user chooses "2":
+If the user chooses "2":
         Prompt the user: "Please Enter the full Vehicle name:"
         Get the vehicle name input from the user
         Check if the entered vehicle name is in the list of allowed vehicles
@@ -33,7 +32,7 @@ Loop continuously until the user decides to exit:
             Alert the user: "[Vehicle Name] is not an authorized vehicle, if you received this in error please check the spelling and try again"
         Print a separation line for clarity
 
-  If the user chooses "3":
+ If the user chooses "3":
         Prompt the user: "Please Enter the full Vehicle name you would like to add:"
         Get the vehicle name input from the user
         Check if the vehicle is already in the list
@@ -57,16 +56,17 @@ If the user chooses "4":
                 Confirm: "You have REMOVED '[Vehicle Name]' as an authorized vehicle"
             Else:
                 Alert the user: "Removal cancelled."
-      Else:
+          Else:
             Alert the user: "[Vehicle Name] is not found in the authorized vehicles list."
         Print a separation line for clarity
 
  If the user chooses "5":
         Display the goodbye message: "Thank you for using the AutoCountry Vehicle Finder, good-bye!"
-        Pause for 2 seconds so the user can read the message
+        Prompt the user: "Press any key to exit..."
+        Wait for any keypress
         Terminate the program
 
- If the user enters an invalid choice:
+If the user enters an invalid choice:
         Inform the user that the choice is invalid
         Prompt the user to try again
 
