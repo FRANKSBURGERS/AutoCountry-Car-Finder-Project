@@ -2,72 +2,67 @@ Start the program
 
 Define the filename for storing vehicle data as 'allowed_vehicles.txt'
 
-Load vehicles from the file:
-    Open 'allowed_vehicles.txt'
+Function load_vehicles:
+    Try to open 'allowed_vehicles.txt'
     Read each line from the file and store it as a list of vehicles
+    If file not found, return an empty list
 
-Loop continuously until the user decides to exit:
-    Display the main menu:
-        Show program version (v0.5) and name (AutoCountry Vehicle Finder)
-        Present options:
-            1. PRINT all Authorized Vehicles
-            2. SEARCH for Authorized Vehicle
-            3. ADD Authorized Vehicle
-            4. DELETE Authorized Vehicle
-            5. Exit
-    Prompt the user to enter their choice
+Function save_vehicles:
+    Open 'allowed_vehicles.txt' in write mode
+    Write each vehicle from the list to the file
 
- If the user chooses "1":
-        Display the message: "The AutoCountry sales manager has authorized the purchase and selling of the following vehicles:"
-        List all vehicles from the list
-        Print a separation line for clarity
+Function main_menu:
+    Display the main menu with options:
+        1. PRINT all Authorized Vehicles
+        2. SEARCH for Authorized Vehicle
+        3. ADD Authorized Vehicle
+        4. DELETE Authorized Vehicle
+        5. Exit
 
-If the user chooses "2":
-        Prompt the user: "Please Enter the full Vehicle name:"
-        Get the vehicle name input from the user
-        Check if the entered vehicle name is in the list of allowed vehicles
-        If the vehicle is found:
-            Confirm: "[Vehicle Name] is an authorized vehicle"
-        If the vehicle is not found:
-            Alert the user: "[Vehicle Name] is not an authorized vehicle, if you received this in error please check the spelling and try again"
-        Print a separation line for clarity
+Function print_vehicles:
+    Display "The AutoCountry sales manager has authorized the purchase and selling of the following vehicles:"
+    List all vehicles
+    Print a separation line
 
- If the user chooses "3":
-        Prompt the user: "Please Enter the full Vehicle name you would like to add:"
-        Get the vehicle name input from the user
-        Check if the vehicle is already in the list
-        If not in the list:
-            Add the new vehicle to the list
-            Save the updated list to 'allowed_vehicles.txt'
-            Confirm: "You have added '[Vehicle Name]' as an authorized vehicle"
-        Else:
-            Alert the user: "[Vehicle Name] is already an authorized vehicle"
-        Print a separation line for clarity
+Function search_vehicle:
+    Prompt the user to enter the full vehicle name
+    Check if the vehicle is in the list
+    If found, confirm the vehicle is authorized
+    If not found, alert the user it is not authorized and suggest checking the spelling
+    Print a separation line
 
-If the user chooses "4":
-        Prompt the user: "Please Enter the full Vehicle name you would like to REMOVE:"
-        Get the vehicle name input from the user
-        Check if the vehicle is in the list
-        If in the list:
-            Ask for confirmation: "Are you sure you want to remove '[Vehicle Name]' from the Authorized Vehicles List?"
-            If confirmed 'yes':
-                Remove the vehicle from the list
-                Save the updated list to 'allowed_vehicles.txt'
-                Confirm: "You have REMOVED '[Vehicle Name]' as an authorized vehicle"
-            Else:
-                Alert the user: "Removal cancelled."
-          Else:
-            Alert the user: "[Vehicle Name] is not found in the authorized vehicles list."
-        Print a separation line for clarity
+Function add_vehicle:
+    Prompt the user to enter the full vehicle name they wish to add
+    Check if the vehicle is already in the list
+    If not, add the vehicle to the list and save the updated list
+    Confirm the vehicle has been added
+    If already in the list, alert the user it is already authorized
+    Print a separation line
 
- If the user chooses "5":
-        Display the goodbye message: "Thank you for using the AutoCountry Vehicle Finder, good-bye!"
-        Prompt the user: "Press any key to exit..."
-        Wait for any keypress
-        Terminate the program
+Function delete_vehicle:
+    Prompt the user to enter the full vehicle name they wish to remove
+    Check if the vehicle is in the list
+    If in the list, ask for confirmation to remove
+    If confirmed, remove the vehicle from the list and save the updated list
+    Confirm the vehicle has been removed
+    If not confirmed, cancel the removal
+    If the vehicle is not found, alert the user it is not in the list
+    Print a separation line
 
-If the user enters an invalid choice:
-        Inform the user that the choice is invalid
-        Prompt the user to try again
+Function main:
+    Load vehicles using load_vehicles function
+    While true:
+        Call main_menu function
+        Prompt the user to enter their choice
+        If choice is "1", call print_vehicles function
+        If choice is "2", call search_vehicle function
+        If choice is "3", call add_vehicle function
+        If choice is "4", call delete_vehicle function
+        If choice is "5":
+            Display "Thank you for using the AutoCountry Vehicle Finder, good-bye!"
+            Prompt "Press any key to exit..."
+            Wait for any keypress
+            Break the loop and terminate the program
+        If invalid choice, inform the user and prompt again
 
 End program
