@@ -15,7 +15,7 @@ def save_vehicles(allowed_vehicles_list, filename):
 
 def main_menu():
     print("********************************")
-    print("AutoCountry Vehicle Finder v0.6")
+    print("AutoCountry Vehicle Finder v1.0")
     print("********************************")
     print("Please Enter the following number below from the following menu:")
     print("1. PRINT all Authorized Vehicles")
